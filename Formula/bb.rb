@@ -28,7 +28,14 @@ class Bb < Formula
   end
 
   def install
-    bin.install "bb"
+    # Handle both wrapped and unwrapped archives
+    if File.exist?("bb")
+      bin.install "bb"
+    else
+      # Find bb binary in subdirectory (archives have wrap_in_directory: true)
+      bb_binary = Dir.glob("*/bb").first || Dir.glob("bb_*/bb").first
+      bin.install bb_binary => "bb" if bb_binary
+    end
   end
 
   test do
