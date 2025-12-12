@@ -4,26 +4,26 @@
 class Bb < Formula
   desc "Bitbucket CLI - Work seamlessly with Bitbucket from the command line"
   homepage "https://github.com/dlbroadfoot/bitbucket-cli"
-  version "2.84.0-rc4"
+  version "2.84.0"
   license "MIT"
 
   on_macos do
     if Hardware::CPU.arm?
       url "https://github.com/dlbroadfoot/bitbucket-cli/releases/download/v#{version}/bb_#{version}_macOS_arm64.zip"
-      sha256 "d8ef0f03151e54176799fd041ef5c221e8e4ccd943fb6ead4a9d9008c6487ee7"
+      sha256 "e404a7d2ccc433fc3275c625c70abaa9fde8dbdfed8739f466ca749e54802d7a"
     else
       url "https://github.com/dlbroadfoot/bitbucket-cli/releases/download/v#{version}/bb_#{version}_macOS_amd64.zip"
-      sha256 "0e6cc1087421d99f8415172cb571613496d8da0db56dc5eee04113fcdde22477"
+      sha256 "51ec9fedea3c796060c0f1d26b6eb49a90b1028d9a26ce4b4f9e428bfc330711"
     end
   end
 
   on_linux do
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
       url "https://github.com/dlbroadfoot/bitbucket-cli/releases/download/v#{version}/bb_#{version}_linux_arm64.tar.gz"
-      sha256 "df367b8b7106b20b230641aa4c8be47ec781915a3da148af38e7f87727de9365"
+      sha256 "057839f9c7a634e9dfeddf2021e4d3dc78a755d1bbe527c83dcc7b5051fdccc2"
     else
       url "https://github.com/dlbroadfoot/bitbucket-cli/releases/download/v#{version}/bb_#{version}_linux_amd64.tar.gz"
-      sha256 "11ebb3a42ca29a546ed01be67f72d3a509bd84cdde17ee18d83a02787f2b027b"
+      sha256 "1b24cba0bcd2d056a478a94220ae4ebaeb5fb47108ab31c75147ec7946949863"
     end
   end
 
